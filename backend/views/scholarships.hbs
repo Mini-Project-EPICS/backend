@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- scholarships.hbs -->
+<section class="scholarships" id="scholarships">
+  <div class="main-container">
+    <h2>Add Scholarship</h2>
+    <form action="/add-scholarship" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
+       {{!-- <label for="email">Organizer Email:</label>
+      <input type="email" id="email" name="email" required> <!-- Add email input field --> --}}
+
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" required>
+
+     
+
+      <!-- Add other scholarship details as needed -->
+
+      <button type="submit">Add Scholarship</button>
+    </form>
+  </div>
+</section>
+
+<!-- scholarships.hbs -->
+<section class="display-scholarships" id="display-scholarships">
+        <div class="main-container">
+            <h2>Scholarships</h2>
+            <!-- Display scholarships data from the server -->
+            <ul>
+                {{#each scholarships}}
+                <li>
+                    <h3>{{this.title}}</h3>
+                    <p>{{this.description}}</p>
+                    <p>Organizer Email: {{this.email}}</p>
+                    <p>Amount: {{this.amount}}</p>
+                     <!-- Display organizer email -->
+                    <!-- Display other scholarship details as needed -->
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>

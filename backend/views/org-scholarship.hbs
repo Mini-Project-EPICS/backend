@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="scholarshipFormTemplate" style="display: none;">
+    <form>
+      <label for="title">Scholarship Title:</label>
+      <input type="text" name="title" required>
+      
+      <label for="description">Description:</label>
+      <textarea name="description" rows="4" required></textarea>
+      
+      <label for="eligibility">Eligibility:</label>
+      <textarea name="eligibility" rows="3" required></textarea>
+      
+      <label for="deadline">Deadline:</label>
+      <input type="date" name="deadline" required>
+      
+      <button type="button" onclick="addScholarship()">Add Scholarship</button>
+    </form>
+  </div>
+
+  <!-- Scholarship Display Section -->
+  <section id="scholarshipDisplay">
+    <!-- Scholarships will be dynamically added here -->
+  </section>
+
+  <!-- ... Rest of your HTML code ... -->
+
+  <script>
+    // Organizer's scholarship data array
+    let scholarships = [];
+
+    // Function to add scholarship to the scholarships array
+    function addScholarship() {
+      const formElement = document.querySelector("#scholarshipFormTemplate form");
+      const formData = new FormData(formElement);
+      const scholarshipData = Object.fromEntries(formData.entries());
+      scholarships.push(scholarshipData);
+      displayScholarships();
+    }
+
+    // Function to dynamically display scholarships on the page
+    function displayScholarships() {
+      const scholarshipDisplay = document.getElementById("scholarshipDisplay");
+      scholarshipDisplay.innerHTML = "";
+
+      for (const scholarship of scholarships) {
+        const scholarshipCard = document.createElement("div");
+        scholarshipCard.classList.add("scholarship-card");
+
+        // Customize the card's content as per your design
+        scholarshipCard.innerHTML = `
+          <h2>${scholarship.title}</h2>
+          <p>${scholarship.description}</p>
+          <p>Eligibility: ${scholarship.eligibility}</p>
+          <p>Deadline: ${scholarship.deadline}</p>
+        `;
+
+        scholarshipDisplay.appendChild(scholarshipCard);
+      }
+    }
+  </script>
+</body>
+</html>
