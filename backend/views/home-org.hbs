@@ -8,7 +8,7 @@
 
   <title>SIS</title>
 
-  <link rel="stylesheet" href="/backend/public/css/style.css">
+  {{!-- <link rel="stylesheet" href="/backend/public/css/style.css"> --}}
 
   <link rel="stylesheet"
   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -517,8 +517,6 @@ section{
   <div class="bx bx-menu" id="menu-icon"></div>
     <nav class="navbar">
         <a href="#home">Home</a>
-        {{!-- <a href="#">Scholarships</a>
-        <a href="#">My Scholarships</a> --}}
         <a href="#about_us" >About Us</a>
         <a href="/scholarships" >Scholarships</a>
         <a href="#" >Applied Students</a>
@@ -541,11 +539,12 @@ section{
 <section class="home" id="home">
   <div class="home-text">
     <h1>Welcome!!</h1>
+    <p></p>
 
     <p> Let the world know your scholarships.
     </p>
     
-    <button class="home-btn">Display</button>
+    
   </div>
 </section>
 <!-- home ends -->
@@ -554,7 +553,7 @@ section{
 <section class="container">
   <div class="main-container">
     <div class="all-text-container">
-      <h2>Find the right Scholarships that suits you</h2>
+      <h2>Extend your scholarships to broader scope</h2>
     </div>
    
     <img class="gif" src="../images/bubble-gum-workflow.gif"  alt="">
@@ -689,183 +688,6 @@ section{
 </footer>
 <!-- Footer ends -->
 
-<!-- Form Template -->
-  {{!-- <div id="scholarshipFormTemplate" style="display: none;">
-    
-    <form class="scholarship-form">
-      <!-- ... Scholarship form fields ... -->
-   
-      <label for="scholarshipName">Scholarship Name:</label>
-      <input type="text" id="scholarshipName" name="scholarshipName" required>
-      
-      <label for="scholarshipDescription">Description:</label>
-      <textarea id="scholarshipDescription" name="scholarshipDescription" required></textarea>
 
-      <!-- Add more input fields as needed for your scholarship form -->
-    </form>
-  </div>
-
-  <!-- Scholarship Display Section -->
-  <section id="scholarshipDisplay">
-    <!-- Scholarship forms will be added here dynamically -->
-  </section>
-
-  <!-- Add a button to trigger the scholarship form creation -->
-  <button id="addScholarshipButton">Add Scholarship</button>
-
-   --}}
-  
-{{!-- <script>
-  // JavaScript code to handle scholarship form creation and interaction
-  const scholarshipFormTemplate = document.getElementById('scholarshipFormTemplate');
-  const scholarshipDisplaySection = document.getElementById('scholarshipDisplay');
-  const addScholarshipButton = document.getElementById('addScholarshipButton');
-
-  // Function to create a new scholarship form
-  function createScholarshipForm() {
-    const formClone = scholarshipFormTemplate.cloneNode(true);
-    formClone.style.display = 'block';
-
-    // Add a delete button to the form
-    const deleteButton = document.createElement('button');
-    deleteButton.innerText = 'Delete Scholarship';
-    deleteButton.addEventListener('click', () => {
-      scholarshipDisplaySection.removeChild(formClone);
-    });
-    formClone.appendChild(deleteButton);
-
-    scholarshipDisplaySection.appendChild(formClone);
-  }
-
-  // Event listener to trigger the scholarship form creation
-  addScholarshipButton.addEventListener('click', createScholarshipForm);
-</script> --}}
-{{!-- <script>
-  // JavaScript code to handle scholarship form creation and interaction
-  const scholarshipFormTemplate = document.getElementById('scholarshipFormTemplate');
-  const scholarshipDisplaySection = document.getElementById('scholarshipDisplay');
-  const addScholarshipButton = document.getElementById('addScholarshipButton');
-
-  // Function to create a new scholarship form
-  function createScholarshipForm() {
-    const formClone = scholarshipFormTemplate.cloneNode(true);
-    formClone.style.display = 'block';
-
-    // Add a delete button to the form
-    const deleteButton = document.createElement('button');
-    deleteButton.innerText = 'Delete Scholarship';
-    deleteButton.addEventListener('click', () => {
-      scholarshipDisplaySection.removeChild(formClone);
-      saveScholarshipsToLocalStorage(); // Save scholarships after deletion
-    });
-    formClone.appendChild(deleteButton);
-
-    scholarshipDisplaySection.appendChild(formClone);
-    saveScholarshipsToLocalStorage(); // Save scholarships after creation
-  }
-
-  // Function to save scholarships to local storage
-  function saveScholarshipsToLocalStorage() {
-    const scholarshipForms = scholarshipDisplaySection.querySelectorAll('.scholarship-form');
-    const scholarshipsData = [];
-    scholarshipForms.forEach(form => {
-      scholarshipsData.push({ formHTML: form.innerHTML });
-    });
-    localStorage.setItem('scholarships', JSON.stringify(scholarshipsData));
-  }
-
-  // Function to load scholarships from local storage
-  function loadScholarshipsFromLocalStorage() {
-    const scholarshipsDataJSON = localStorage.getItem('scholarships');
-    if (scholarshipsDataJSON) {
-      const scholarshipsData = JSON.parse(scholarshipsDataJSON);
-      scholarshipsData.forEach(data => {
-        const formClone = scholarshipFormTemplate.cloneNode(true);
-        formClone.style.display = 'block';
-        formClone.innerHTML = data.formHTML;
-
-        // Add a delete button to the form
-        const deleteButton = document.createElement('button');
-        deleteButton.innerText = 'Delete Scholarship';
-        deleteButton.addEventListener('click', () => {
-          scholarshipDisplaySection.removeChild(formClone);
-          saveScholarshipsToLocalStorage(); // Save scholarships after deletion
-        });
-        formClone.appendChild(deleteButton);
-
-        scholarshipDisplaySection.appendChild(formClone);
-      });
-    }
-  }
-
-  // Event listener to trigger the scholarship form creation
-  addScholarshipButton.addEventListener('click', createScholarshipForm);
-
-  // Load scholarships from local storage on page load
-  loadScholarshipsFromLocalStorage();
-</script> --}}
-
-{{!-- <script>
-  // JavaScript code to handle scholarship form creation and interaction
-  const scholarshipFormTemplate = document.getElementById('scholarshipFormTemplate');
-  const scholarshipDisplaySection = document.getElementById('scholarshipDisplay');
-  const addScholarshipButton = document.getElementById('addScholarshipButton');
-
-  // Function to create a new scholarship form
-  function createScholarshipForm() {
-    const formClone = scholarshipFormTemplate.cloneNode(true);
-    formClone.style.display = 'block';
-
-    // Add a delete button to the form
-    const deleteButton = document.createElement('button');
-    deleteButton.innerText = 'Delete Scholarship';
-    deleteButton.addEventListener('click', () => {
-      scholarshipDisplaySection.removeChild(formClone);
-      saveScholarshipsToLocalStorage(); // Save scholarships after deletion
-    });
-    formClone.appendChild(deleteButton);
-
-    scholarshipDisplaySection.appendChild(formClone);
-    saveScholarshipsToLocalStorage(); // Save scholarships after creation
-  }
-
-  // Function to save scholarships to local storage
-  function saveScholarshipsToLocalStorage() {
-    const scholarshipForms = scholarshipDisplaySection.querySelectorAll('.scholarship-form');
-    const scholarshipsData = [];
-    scholarshipForms.forEach(form => {
-      scholarshipsData.push({ formHTML: form.innerHTML });
-    });
-    localStorage.setItem('scholarships', JSON.stringify(scholarshipsData));
-  }
-
-  // Function to load scholarships from local storage
-  function loadScholarshipsFromLocalStorage() {
-    const scholarshipsDataJSON = localStorage.getItem('scholarships');
-    if (scholarshipsDataJSON) {
-      const scholarshipsData = JSON.parse(scholarshipsDataJSON);
-      scholarshipsData.forEach(data => {
-        const formClone = scholarshipFormTemplate.cloneNode(true);
-        formClone.style.display = 'block';
-        formClone.innerHTML = data.formHTML;
-
-        // Add a delete button to the form
-        const deleteButton = document.createElement('button');
-        deleteButton.innerText = 'Delete Scholarship';
-        deleteButton.addEventListener('click', () => {
-          scholarshipDisplaySection.removeChild(formClone);
-          saveScholarshipsToLocalStorage(); // Save scholarships after deletion
-        });
-        formClone.appendChild(deleteButton);
-
-        scholarshipDisplaySection.appendChild(formClone);
-      });
-    }
-  }
-
-  // Event listener to trigger the scholarship form creation
-  addScholarshipButton.addEventListener('click', createScholarshipForm);
-
-</script> --}}
 </body>
 </html>

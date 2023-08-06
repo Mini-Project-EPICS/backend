@@ -8,20 +8,19 @@
   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
   <style>
-    *{
-       
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Ysabeau', sans-serif;
-    text-decoration: none;
-    border: none;
-    scroll-behavior: smooth;
-    outline: none;
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'Ysabeau', sans-serif;
+        text-decoration: none;
+        border: none;
+        scroll-behavior: smooth;
+        outline: none;
     }
 
-    body{
+    body {
         height: 100vh;
         width: 100%;
         display: flex;
@@ -30,16 +29,17 @@
         background: #e6ccb2;
     }
 
-    .container{
+    .container {
         position: relative;
         width: 100%;
-        max-width: 450px;
-        height: 530px;
-        background: transparent;
+        max-width: 600px; /* Adjusted max-width */
+        height: auto; /* Adjusted height */
+        background: #1c2541;
         border-radius: 20px;
-        border: 2px solid rgba(257,257,257,.27);
+        border: 2px solid rgba(257, 257, 257, .27);
         backdrop-filter: blur(20px);
         display: flex;
+        flex-direction: column; /* Changed to column layout */
         align-items: center;
         justify-content: center;
         overflow: hidden;
@@ -54,24 +54,24 @@
         text-align: center;
         font-size: 42px;
         font-weight: 700;
-        color: #ffffff;
+        color: #F9B420;
     }
 
     .input-box{
         position: relative;
         height: 52px;
         width: 100%;
-        border-bottom: 2px solid #ffffff;
+        border-bottom: 2px solid #F9B420;
         margin: 32px 0;
     }
 
     .input-box label{
         position: absolute;
-        top: 40%;
+    top: 16px; /* Adjust the top value for better alignment */
         left: 6px;
         transform: translateY(-50%);
         pointer-events: none;
-        color: #fff;
+        color: #F9B420;
         font-weight: 500;
         font-size: 18px;
         transition: all ease .40s;
@@ -83,8 +83,8 @@
         background: transparent;
         font-size: 17px;
         font-weight: 600;
-        color: #fff;
-        padding: 0 30p 0 6px;
+        color: #F9B420;
+    padding: 26px 30px 6px 6px; /* Adjust top padding to create space */
     }
 
 
@@ -93,19 +93,23 @@
         position: absolute;
         right: 9px;
         font-size: 20px;
-        color: #fff;
+        color: #F9B420;
         line-height: 55px;
     }
 
     .input-box input:focus~label,
     .input-box input:valid~label{
         top: -3px;
-    }
+            font-size: 14px; /* Adjust font size to prevent overlap */
+    transform: translateY(-50%) scale(0.85); /* Apply scaling to the label */
+}
+
+    
 
     .btn{
         width: 100%;
         height: 45px;
-        background: #fff;
+        background: #F9B420;
         border-radius: 30px;
         font-size: 17px;
         font-weight: 600;
@@ -116,7 +120,7 @@
 
     .register{
         text-align: center;
-        color: #fff;
+        color: #F9B420;
         font-size: 15px;
         font-weight: 500;
         margin: 35px 0 10px;
@@ -125,7 +129,7 @@
     .register p a{
         font-size: 15px;
         font-weight: 600;
-        color: #fff;
+        color: #F9B420;
         margin-left: 5px;
     }
 
@@ -133,6 +137,41 @@
         text-decoration: underline;
 
     }
+
+    .label userType{
+        color:#F9B420
+    }
+
+    /* Styling for the label "Select User Type" */
+label[for="userType"] {
+  font-size: 18px;
+  color: #F9B420;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Styling for the select user type dropdown */
+#userType {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px dashed #F9B420;
+  border-radius: 10px;
+  color: #F9B420;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 0 30px 0 6px;
+  margin-bottom: 32px;
+}
+
+/* Styling for the options within the select dropdown */
+#userType option {
+  background-color: #1c2541;
+  color: #F9B420;
+  font-weight: 600;
+  font-size: 17px;
+}
 
 
   </style>
@@ -146,7 +185,7 @@
                 <h1>Sign Up</h1>
                  <form action="/register" method="post">
                   <div class="input-box">
-                    <span class="icon"> <i class="bx bxs-envelope"></i></span>
+                    <span class="icon"> <i class="bx bxs-user"></i></span>
                     <input type="name" name="name" placeholder="" required>
                     <label for="email">Username</label>
                  </div>
@@ -157,17 +196,14 @@
                     <label for="email">Email</label>
                  </div>
 
-                 {{!-- <div class="input-box">
-                    <span class="icon"> <i class="bx bxs-envelope"></i></span>
-                    <input type="text" name="role" placeholder="" required>
-                    <label for="role">Role</label>
-                 </div> --}}
 
-                 <label for="userType">Select User Type:</label>
+                 <label for="userType" class="userType"> Select User Type:</label>
   <select id="userType" name="userType" required>
-    <option value="student">Student</option>
-    <option value="organizer">Organizer</option>
-  </select>
+                <option value="" disabled selected>Select your role</option>
+                <option value="student" class="val">Student</option>
+                <option value="organizer" class="val">Organizer</option>
+            </select>
+
 
 
                  <div class="input-box">

@@ -33,12 +33,7 @@ const organiserSchema = new mongoose.Schema({
         enum: ["organizer"],
         default: "organizer"
     }
-
-    
-
-   
 })
-
 
 const organiser_collection = new mongoose.model("Organiser" , organiserSchema)
 

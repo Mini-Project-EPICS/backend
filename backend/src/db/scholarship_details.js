@@ -11,19 +11,14 @@ mongoose.connect("mongodb://0.0.0.0:27017/Userdata", {
     console.log(`no connection`,e.message);
 })
 
-
 const scholarshipSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   amount: { type: Number, required: true },
-  
-
    email:{
     type:String ,
     required:true,
-    
-
-   }
+       }
   // Add other scholarship details as needed
 });
 

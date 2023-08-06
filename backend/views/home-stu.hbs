@@ -8,7 +8,7 @@
 
   <title>SIS</title>
 
-  <link rel="stylesheet" href="/backend/public/css/style.css">
+  {{!-- <link rel="stylesheet" href="/backend/public/css/style.css"> --}}
 
   <link rel="stylesheet"
   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -186,40 +186,7 @@ section{
     line-height: 1.2;
 
 }
-/* .row-items{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
-    grid-gap: 1rem;
-    align-items: center;
-    text-align: center;
-    margin-top: 3rem;
-}
 
-.container-box{
-    background: var(--bg-color);
-    border: 1px solid slategray;
-    padding: 10px 10px;
-    border-radius: 5px;
-    transition: all 1s ease 0s;
-    cursor: pointer;
-}
-
-.container-box h4{
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 8px;
-} */
-
-/* .container-box p{
-    font-size: 15px;
-    color: var(--second-color);
-} */
-
-/* .container-box :hover{
-    box-shadow: 5px 30px 56.1276px rgb(55 55 55 /12%);
-    border: 1px solid transparent;
-    transform: translate(-3ps);
-} */
 
 .about{
     height: 100vh;
@@ -237,11 +204,7 @@ section{
     
 }
 
-/* .all-text{
-    width: 700px;
-    max-width: 100%;
-    padding: 0 100px;
-} */
+
 
 .main{
     width: 1290px;
@@ -298,6 +261,26 @@ section{
     
 }
 
+.home-btn {
+    background: #1c2541 ;
+    padding: 20px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #edc531;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    box-shadow: 0px 16px 32px 0px rgb( 0 0 0 / 6%);
+    
+}
+
+{{!-- .btn button:hover{
+    background-color: ;
+    color: #ffe169;
+    transition: .3s;
+    cursor: pointer;
+} --}}
+
 .btn button{
     background: #1c2541 ;
     padding: 20px 20px;
@@ -317,7 +300,6 @@ section{
     transition: .3s;
     cursor: pointer;
 }
-
 
 @media (max-height:800px){
     footer{
@@ -551,6 +533,10 @@ section{
 }
 
 /* our team ends */
+
+.abt {
+  color: #edc531;
+}
 </style>
 <body>
   
@@ -565,7 +551,9 @@ section{
         {{!-- <a href="#">Scholarships</a>
         <a href="#">My Scholarships</a> --}}
         <a href="#about_us" >About Us</a>
-        <a href="#" >Scholarships</a>
+        <a href="/student-profile">Scholarships</a>
+        
+
         <a href="#" >Applied Scholarships</a>
 
 
@@ -588,7 +576,7 @@ section{
     <p> Find the right scholarships for you all at one place.
     </p>
     
-    <button class="home-btn">Explore</button>
+<a href="/student-profile" class="home-btn">Explore</a>
   </div>
 </section>
 <!-- home ends -->
@@ -615,12 +603,12 @@ section{
     <div class="all-text">
       <h4>About Us</h4>
       <h1>Find scholarships</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, repudiandae dolorem. Temporibus mollitia eaque, iure tempora expedita illo in quos cupiditate perspiciatis consequuntur perferendis dolores culpa modi ipsa earum doloremque?
+      <p style="color:#33383b;">At [Website Name], we believe that every student deserves a chance to thrive academically, regardless of their financial circumstances. That's why we're committed to simplifying the scholarship search process, helping you uncover opportunities that align with your journey, and ultimately contributing to your educational success.
 
       </p>
       <div class="btn">
-         <a href="#our_team"> <button type="button"> Our Team </button></a>
-        <button type="button">Learn More</button>
+         <a href="#our_team"> <button type="btn"> Our Team </button></a>
+        <button type="btn">Learn More</button>
       </div>
     </div>
   </div>
@@ -653,7 +641,7 @@ section{
     </div>
 
     <div class="box">
-      <img src="../images/hands-icon.jpg" alt="">
+      <img src="../images/deepthi.jpeg" alt="">
       <h3>Deepthi S</h3>
       <div class="icons">
         <a href="#" ><i class="fa-brands fa-square-github"></i></a>
